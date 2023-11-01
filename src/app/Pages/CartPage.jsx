@@ -10,6 +10,11 @@ const CartPageContainer = styled.div`
   display: flex;
   width: 100%;
 `
+const BtnContainer = styled.div`
+  display: flex; 
+  justify-content: center;
+`
+
 const ProceedToBuy = styled(Link)`
   background-color: white;
   color: #823fbd;
@@ -44,9 +49,11 @@ const CartPage = () => {
         <CartCard />
         <SummarySection>
           <CartSummary />
-          <ProceedToBuy to="/checkout">
-            Proceed to Buy
-          </ProceedToBuy>
+          <BtnContainer>
+            <ProceedToBuy to="/checkout">
+              Proceed to Buy
+            </ProceedToBuy>
+          </BtnContainer>
         </SummarySection>
       </CartPageContainer>
       : <EmptyPage />
