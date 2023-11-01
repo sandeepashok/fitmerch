@@ -174,7 +174,7 @@ const DisabledCounterBtn = styled.button`
     height: 27px;
     width: 27px;
     background-color: white;
-    color: grey";
+    color: grey;
     font-size: larger;
     border-radius: 50%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;

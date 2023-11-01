@@ -164,7 +164,7 @@ const addToCart = (state, { product, count }) => {
   const cartCopy = [...cart];
   if (isProductInCart) {
     const itemToUpdate = cartCopy.findIndex(({ itemId }) => itemId === productCopy.itemId);
-    cartCopy[itemToUpdate].quantity = cartCopy[itemToUpdate].quantity + count / 2;
+    cartCopy[itemToUpdate].quantity = cartCopy[itemToUpdate].quantity + count;
     updatedCart = [...cartCopy];
   } else if (!isProductInCart) {
     productCopy.quantity = count;
