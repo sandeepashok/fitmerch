@@ -156,7 +156,7 @@ const CheckoutForm = () => {
     billingAddress: '',
     shippingAddress: '',
     cardNumber: '',
-    cardExpiryDate: new Date(),
+    cardExpiryDate: '',
     cvv: '',
   });
 
@@ -282,6 +282,7 @@ const CheckoutForm = () => {
             </DisplayData>
           </DisplayDataSection>
 
+          <h2>Payment:</h2>
           {/* Card Number */}
           <Input
             type="number"
@@ -292,7 +293,7 @@ const CheckoutForm = () => {
                 handleInputChange('cardNumber', e.target.value)
               }
             }}
-            placeholder="Card Number"
+            placeholder="Enter Card Number"
             required
           />
           <ErrorText>{paymentErrors.cardNumber}</ErrorText>
