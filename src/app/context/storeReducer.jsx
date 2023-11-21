@@ -38,6 +38,8 @@ const reducer = (state, action) => {
       return removeFromWishlist(state, payload);
     case TYPES.MOVE_TO_CART:
       return moveToCart(state, payload);
+    case TYPES.CLEAR_CART:
+      return clearCart(state)
     default:
       return state;
   }
@@ -218,5 +220,10 @@ const moveToCart = (state, { product }) => {
   return { ...state, wishlist: updatedWishlist, cart: updatedCart }
 }
 
+// Emptying the cart
+
+const clearCart = (state) => {
+  return { ...state, cart: [] }
+}
 
 export default reducer;

@@ -30,7 +30,7 @@ const ProceedToBuy = styled(Link)`
     background-color: #823fbd;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+  }
 `
 
 const SummarySection = styled.div`

@@ -5,7 +5,7 @@ import { StoreContext } from "../../context/StoreContext"
 const SummaryContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 `
 
 const Summary = styled.div`
@@ -79,8 +79,6 @@ const CartSummary = () => {
 
   const totalMrp = mrpArr.reduce((acc, cv) => acc + cv);
   const totalPrice = priceArr.reduce((acc, cv) => acc + cv);
-
-  console.log(cart, totalMrp, totalPrice)
 
   return (
     <SummaryContainer>

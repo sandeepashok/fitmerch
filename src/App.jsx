@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./app/Components/navbar/Navbar";
 import CartPage from "./app/Pages/CartPage";
+import CheckoutPage from "./app/Pages/CheckoutPage";
 import HomePage from "./app/Pages/HomePage";
 import { ListingPage } from "./app/Pages/ListingPage";
 import NotFoundPage from "./app/Pages/NotFoundPage";
@@ -18,7 +19,7 @@ function App() {
           <Route path="shop" element={<ListingPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="wishlist" element={<WishlistPage />} />
-          <Route path="checkout" element="" />
+          <Route path="checkout" element={<CheckoutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </StoreContextProvider>
