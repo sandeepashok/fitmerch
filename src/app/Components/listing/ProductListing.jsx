@@ -79,7 +79,6 @@ const FilterText = styled.span`
 
 const ProductListing = () => {
   const { state: { products, booleanStates: { isMobileFilterVisible } }, dispatch } = useContext(StoreContext);
-  console.log(isMobileFilterVisible)
   return (
     <ListingContainer isactive={isMobileFilterVisible}>
       {products.length !== 0
