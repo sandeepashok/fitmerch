@@ -6,6 +6,13 @@ import { StoreContext } from "../context/StoreContext"
 import EmptyPage from "./EmptyPage"
 import { Link } from "react-router-dom"
 
+const PageHeading = styled.h2`
+  text-align: center;
+  margin-top: 32px;
+  font-size: 30px;
+  color: #3E4152;
+`
+
 const CartPageContainer = styled.div`
   display: flex;
   width: 100%;
@@ -44,19 +51,22 @@ const CartPage = () => {
   const { state: { cart } } = useContext(StoreContext);
 
   return (
-    cart.length !== 0
-      ? <CartPageContainer>
-        <CartCard />
-        <SummarySection>
-          <CartSummary />
-          <BtnContainer>
-            <ProceedToBuy to="/checkout">
-              Proceed to Buy
-            </ProceedToBuy>
-          </BtnContainer>
-        </SummarySection>
-      </CartPageContainer>
-      : <EmptyPage />
+    <>
+      <PageHeading>Your Cart</PageHeading>
+      {cart.length !== 0
+        ? <CartPageContainer>
+          <CartCard />
+          <SummarySection>
+            <CartSummary />
+            <BtnContainer>
+              <ProceedToBuy to="/checkout">
+                Proceed to Buy
+              </ProceedToBuy>
+            </BtnContainer>
+          </SummarySection>
+        </CartPageContainer>
+        : <EmptyPage />}
+    </>
   )
 }
 

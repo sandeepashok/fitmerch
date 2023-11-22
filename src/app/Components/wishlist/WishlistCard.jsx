@@ -6,6 +6,12 @@ import { TYPES } from '../../context/types';
 import { Link } from 'react-router-dom';
 import EmptyPage from '../../Pages/EmptyPage';
 
+const PageHeading = styled.h2`
+  text-align: center;
+  margin: 32px;
+  font-size: 30px;
+  color: #3E4152;
+`
 
 const WishlistContainer = styled.div`
     display: flex;
@@ -201,6 +207,7 @@ const WishlistCard = () => {
 
   return (
     <>
+      <PageHeading>Your Wishlist</PageHeading>
       {wishlist.length !== 0
         ? <WishlistContainer>
           {

@@ -167,7 +167,6 @@ const CheckoutForm = () => {
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  console.log(isModalOpen)
 
   // Handle form field changes
   const handleInputChange = (name, value) => {
