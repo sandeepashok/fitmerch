@@ -12,6 +12,11 @@ const NavContainer = styled.div`
   align-items: center;
   box-shadow: 0 0 10px 4px rgb(0 0 0/5%);
   z-index: 2;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const BrandContainer = styled(Link)`
   width: 155px;
@@ -26,8 +31,9 @@ const BrandContainer = styled(Link)`
     transform: scale(1.15);
   }
 `;
-const BrandName = styled.div`
+const BrandName = styled.h1`
   color: #823FBD;
+  font-size: 28px;
   font-weight: 700;
   text-decoration: none;
 `;
@@ -41,6 +47,10 @@ const NavLinksContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin: 16px;
+  }
 `;
 const Navlink = styled(NavLink)`
   margin: 8px 16px;

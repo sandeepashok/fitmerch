@@ -9,25 +9,31 @@ const HomeContainer = styled.div`
 `
 const BannerTaglineContainer = styled.div`
   background-color: #eaeaec;
-  color: #696b79;
+  color: #3E4152;
   padding: 0.5rem;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   font-family: sans-serif;
 `
 
-const BannerTagline = styled.h1`
+const BannerTagline = styled.h2`
   display: inline;
   font-size: 16px;
   font-weight: inherit;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const TaglineLink = styled(Link)`
   text-decoration: underline;
-  color: #696b79;
+  color: #3E4152;
   font-weight: 700;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const BannerLink = styled(Link)``
@@ -37,12 +43,15 @@ const Banner = styled.img`
   cursor: pointer;
 `;
 
-const Title = styled.h2`
+const Title = styled.h3`
   margin: 48px 1rem 16px;
   font-size: 38px;
   font-weight: 700;
   text-align: center;
   color: #3e4152;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `
 
 const CardContainer = styled.div`
@@ -69,9 +78,18 @@ const Vector = styled.img`
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
+  @media (max-width: 768px) {
+    width: 105px;
+    height: 105px;
+  }
 `
 
-const Subtitle = styled.h3``
+const Subtitle = styled.h3`
+  font-size: 18px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`
 
 const HomePage = () => {
 
@@ -80,12 +98,12 @@ const HomePage = () => {
   return (
     <HomeContainer>
       <BannerTaglineContainer>
-        <BannerTagline>Discounts on various products upto 60% Off </BannerTagline>
+        <BannerTagline>Discounts on various products upto 60% Off &#62;&#62; </BannerTagline>
         <TaglineLink to="/shop">ShopNow</TaglineLink>
       </BannerTaglineContainer>
 
       <BannerLink to="/shop">
-        <Banner src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696838570/landing-page-images/r6qfrh7g80cgb95qovhp.png' />
+        <Banner alt='Banner' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696838570/landing-page-images/r6qfrh7g80cgb95qovhp.png' />
       </BannerLink>
 
       <Title>Featured Categories</Title>
@@ -100,7 +118,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/zqhlyekgya6m8mkfzj8t.png' />
+          <Vector alt='Shirt image' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/zqhlyekgya6m8mkfzj8t.png' />
+
           <Subtitle>Shirts</Subtitle>
         </Card>
 
@@ -113,7 +132,7 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529787/landing-page-images/landing%20page%20filter%20imgs/elcsn8to1mn0owogsgwr.png' />
+          <Vector alt='Sweat-shirt image' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529787/landing-page-images/landing%20page%20filter%20imgs/elcsn8to1mn0owogsgwr.png' />
           <Subtitle>Sweat-Shirts</Subtitle>
         </Card>
 
@@ -126,7 +145,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/udgirbbj8jziqp3fddn9.png' />
+          <Vector alt='Track-pants image' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/udgirbbj8jziqp3fddn9.png' />
+
           <Subtitle>Track-Pants</Subtitle>
         </Card>
 
@@ -139,7 +159,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/tra0flh0d3cf02oectdz.png' />
+          <Vector alt='Shoes Page' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/tra0flh0d3cf02oectdz.png' />
+
           <Subtitle>Shoes</Subtitle>
         </Card>
       </CardContainer>
@@ -156,7 +177,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/nqoencagrdw36jdqjwzr.png' />
+          <Vector alt='Nike symbol' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/nqoencagrdw36jdqjwzr.png' />
+
           <Subtitle>Nike</Subtitle>
         </Card>
 
@@ -169,7 +191,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/gabbb8b1d66a1iftkld4.png' />
+          <Vector alt='HRX symbol' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/gabbb8b1d66a1iftkld4.png' />
+
           <Subtitle>Hrx</Subtitle>
         </Card>
 
@@ -182,7 +205,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/dpf7og8vcv687ragtdda.png' />
+          <Vector alt='Adidas symbol' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/dpf7og8vcv687ragtdda.png' />
+
           <Subtitle>Adidas</Subtitle>
         </Card>
 
@@ -195,7 +219,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/qezwwsmi9cfqo9sowx8c.png' />
+          <Vector alt='UA symbol' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529786/landing-page-images/landing%20page%20filter%20imgs/qezwwsmi9cfqo9sowx8c.png' />
+
           <Subtitle>UA</Subtitle>
         </Card>
 
@@ -208,7 +233,8 @@ const HomePage = () => {
             },
           })
         }>
-          <Vector src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/btpeypvgoaxx0m8xc2ic.png' />
+          <Vector alt='Puma symbol' src='https://res.cloudinary.com/dkavbodkk/image/upload/v1696529785/landing-page-images/landing%20page%20filter%20imgs/btpeypvgoaxx0m8xc2ic.png' />
+
           <Subtitle>Puma</Subtitle>
         </Card>
       </CardContainer>
