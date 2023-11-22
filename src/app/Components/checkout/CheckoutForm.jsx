@@ -11,7 +11,7 @@ const FormContainer = styled.div`
   margin: 32px;
   display: flex;
   justify-content: flex-end;
-`;
+`
 
 const Form = styled.form`
   width: 100%;
@@ -27,7 +27,7 @@ const Input = styled.input`
   box-sizing: border-box;
   background-color: #f2f2f2;
   border-radius: 5px;
-`;
+`
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -50,7 +50,7 @@ const Button = styled.button`
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
-`;
+`
 
 const LinkButton = styled(Link)`
   background-color: white;
@@ -77,22 +77,22 @@ const CalendarInput = styled(DatePicker)`
   box-sizing: border-box;
   background-color: #f2f2f2;
   border-radius: 5px;
-`;
+`
 
 const AddressSection = styled.div`
-`;
+`
 
 const DisplayDataSection = styled.div`
   margin: 20px 0;
   width: 95%;
-`;
+`
 
 const DisplayData = styled.div`
   background-color: #f2f2f2;
   padding: 15px;
   border-radius: 5px;
   margin: 15px;
-`;
+`
 
 const DataItem = styled.p`
   margin: 15px;
@@ -100,12 +100,12 @@ const DataItem = styled.p`
   strong {
     font-weight: bold;
   }
-`;
+`
 
 const ErrorText = styled.p`
   color: red;
   margin: 5px 0;
-`;
+`
 
 const ModalContainer = styled.div`
   display: ${({ isactive }) => isactive ? 'flex' : 'none'};

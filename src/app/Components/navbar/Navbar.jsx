@@ -17,7 +17,7 @@ const NavContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 const BrandContainer = styled(Link)`
   width: 155px;
   font-size: 1.75rem;
@@ -30,18 +30,18 @@ const BrandContainer = styled(Link)`
   &:hover{
     transform: scale(1.15);
   }
-`;
+`
 const BrandName = styled.h1`
   color: #823FBD;
   font-size: 28px;
   font-weight: 700;
   text-decoration: none;
-`;
+`
 const Brand = styled.img`
   height: 50px;
   margin-left: -12px;
   margin-top: -8px;
-`;
+`
 const NavLinksContainer = styled.div`
   margin: 16px 30px;
   display: flex;
@@ -51,7 +51,7 @@ const NavLinksContainer = styled.div`
     justify-content: center;
     margin: 16px;
   }
-`;
+`
 const Navlink = styled(NavLink)`
   margin: 8px 16px;
   text-decoration: none;
@@ -62,7 +62,7 @@ const Navlink = styled(NavLink)`
   &:hover {
     transform: scale(1.2);
   }
-`;
+`
 const NavLinkText = styled.p`
   padding-left: 4px;
   color: #823FBD;
@@ -70,7 +70,7 @@ const NavLinkText = styled.p`
   &:active {
     color: #6c349d;
   }
-`;
+`
 
 
 const Navbar = () => {

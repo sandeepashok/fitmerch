@@ -18,7 +18,7 @@ const FilterContainer = styled.div`
     display: ${({ isactive }) => isactive ? "block" : "none"};
     width: 100%;
   }
-`;
+`
 
 const FilterHeadAndClearSection = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const FilterHeadAndClearSection = styled.div`
   border-bottom: 1px solid hsla(0,0%,50.2%,.3215686274509804);
   padding: 4px;
   margin-bottom: 8px;
-`;
+`
 
 const FilterHeading = styled.h2`
   color: #313131;
@@ -38,7 +38,7 @@ const FilterHeading = styled.h2`
     font-size: 24px;
     margin-top: 8px;
   }
-`;
+`
 
 const FilterSubHeading = styled.b`
   text-decoration: none;
@@ -47,7 +47,7 @@ const FilterSubHeading = styled.b`
   font-weight: 700;
   color: #131313;
   margin: 12px;
-`;
+`
 
 const ClearAllBtn = styled.button`
   background-color: transparent;
@@ -65,7 +65,7 @@ const ClearAllBtn = styled.button`
     border-radius: 5px;
     border: 0.2px solid #ff565621;
   }
-`;
+`
 
 const CloseFilter = styled.button`
   background-color: transparent;
@@ -89,51 +89,51 @@ const CloseBtn = styled(TbAdjustmentsOff)`
 
 const SortBySection = styled.div`
   margin: 12px;
-`;
+`
 
 const DepartmentSection = styled.div`
   margin: 12px;
-`;
+`
 
 const CategorySection = styled.div`
   margin: 12px;
-`;
+`
 
 const BrandSection = styled.div`
   margin: 12px;
-`;
+`
 
 const RatingsSection = styled.div`
   margin: 12px;
-`;
+`
 
 const IncludeOutOfStock = styled.div`
   margin: 12px;
-`;
+`
 
 const Filter = styled.div`
   margin: 4px 2px;
-`;
+`
 
 const FilterSelector = styled.input`
   margin: 4px 2px 0px 16px;
   cursor: pointer;
-`;
+`
 
 const FilterName = styled.label`
   cursor: pointer;
   margin: 4px 16px 0px 2px;
-`;
+`
 
 const Div = styled.div`
   margin: 2px;
-`;
+`
 
 const Hr = styled.hr`
   margin: 12px 8px;
   border: none;
   border-bottom: 1px solid hsla(0,0%,50.2%,.3215686274509804);
-`;
+`
 
 const Filtering = () => {
   const { state: { filters: { sortByPrice, department, categories, brands, ratings, includeOutOfStock }, productListCopy, booleanStates: { isMobileFilterVisible } }, dispatch } = useContext(StoreContext);

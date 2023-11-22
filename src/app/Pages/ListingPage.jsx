@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 0.5rem;
-`;
+`
 export const ListingPage = () => {
   return (
     <Wrapper>

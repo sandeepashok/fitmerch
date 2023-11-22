@@ -3,7 +3,7 @@ import CheckoutForm from "../Components/checkout/CheckoutForm";
 import CartSummary from "../Components/cart/CartSummary"
 
 const CheckoutContainer = styled.div`
-`;
+`
 
 const CheckoutSummaryContainer = styled.div`
   display: flex;
@@ -11,18 +11,18 @@ const CheckoutSummaryContainer = styled.div`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
   border-radius: 10px;
   margin: 32px;
-`;
+`
 
 const SummaryContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-`;
+`
 
 const PlaceOrder = styled.h1`
   color: #444444;
   text-align: center;
   margin: 16px;
-`;
+`
 
 const CheckoutPage = () => {
   return (

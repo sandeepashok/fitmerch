@@ -15,7 +15,7 @@ const ListingContainer = styled.div`
   @media (max-width: 670px) {
     display: ${({ isactive }) => isactive ? "none" : "flex"};
   }
-`;
+`
 
 const Container = styled.div`
  display: flex;

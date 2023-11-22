@@ -41,7 +41,7 @@ const BannerLink = styled(Link)``
 const Banner = styled.img`
   width: 100%;
   cursor: pointer;
-`;
+`
 
 const Title = styled.h3`
   margin: 48px 1rem 16px;
