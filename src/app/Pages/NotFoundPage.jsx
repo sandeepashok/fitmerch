@@ -14,6 +14,10 @@ const Container = styled.div`
 const PlaceHolderImg = styled.img`
   height: 350px;
   width: 350px;
+  @media (max-width: 730px) {
+    height: 250px;
+    width: 250px;
+  }
 `
 const Text = styled.h1`
   font-family: "Open Sans",sans-serif;
