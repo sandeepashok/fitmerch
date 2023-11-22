@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import { v4 as uniqueId } from "uuid";
 import { TYPES } from "../../context/types";
+import { TbAdjustmentsOff } from "react-icons/tb";
 
 const FilterContainer = styled.div`
   height: 100%;
@@ -12,7 +13,11 @@ const FilterContainer = styled.div`
   padding: 8px;
   border-right: 1px solid hsla(0,0%,50.2%,.3215686274509804);
   font-family: inherit;
-  display: block
+  display: block;
+  @media (max-width: 670px) {
+    display: ${({ isactive }) => isactive ? "block" : "none"};
+    width: 100%;
+  }
 `;
 
 const FilterHeadAndClearSection = styled.div`
@@ -25,6 +30,14 @@ const FilterHeadAndClearSection = styled.div`
 
 const FilterHeading = styled.h2`
   color: #313131;
+  @media (max-width: 670px) {
+    margin-top: 4px;
+    font-size: 28px;
+  }
+  @media (max-width: 425px) {
+    font-size: 24px;
+    margin-top: 8px;
+  }
 `;
 
 const FilterSubHeading = styled.b`
@@ -46,7 +59,33 @@ const ClearAllBtn = styled.button`
   &:hover {
     color: #e14a4a;
   }
+  @media (max-width: 670px) {
+    font-size: 14px; 
+    margin: 13px 8px 8px 8px;
+    border-radius: 5px;
+    border: 0.2px solid #ff565621;
+  }
 `;
+
+const CloseFilter = styled.button`
+  background-color: transparent;
+  display: none;
+  @media (max-width: 670px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+`
+const CloseBtn = styled(TbAdjustmentsOff)`
+  color: #E14A4A;
+  font-size: 24px;
+  margin: 8px;
+  @media (max-width: 425px) {
+    font-size: 22px;
+    margin: 10px;
+  }
+`
 
 const SortBySection = styled.div`
   margin: 12px;
@@ -97,7 +136,7 @@ const Hr = styled.hr`
 `;
 
 const Filtering = () => {
-  const { state: { filters: { sortByPrice, department, categories, brands, ratings, includeOutOfStock }, productListCopy }, dispatch } = useContext(StoreContext);
+  const { state: { filters: { sortByPrice, department, categories, brands, ratings, includeOutOfStock }, productListCopy, booleanStates: { isMobileFilterVisible } }, dispatch } = useContext(StoreContext);
   const availableCategories = [];
   const availableBrands = [];
   const customerRatings = [
@@ -118,10 +157,11 @@ const Filtering = () => {
   });
 
   return (
-    <FilterContainer>
+    <FilterContainer isactive={isMobileFilterVisible}>
       <FilterHeadAndClearSection>
         <FilterHeading>Filters</FilterHeading>
-        <ClearAllBtn onClick={() => dispatch({ type: TYPES.CLEAR_ALL })}>Clear All</ClearAllBtn>
+        <ClearAllBtn onClick={() => dispatch({ type: TYPES.CLEAR_ALL })}>Reset Filters</ClearAllBtn>
+        <CloseFilter onClick={() => dispatch({ type: TYPES.SET_MOBILE_FILTER_VISIBLITY })}><CloseBtn /></CloseFilter>
       </FilterHeadAndClearSection>
       <SortBySection>
         <FilterSubHeading>Sort By</FilterSubHeading>

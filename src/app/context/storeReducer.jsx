@@ -13,6 +13,25 @@ export const initialState = {
     ratings: 0,
     includeOutOfStock: false,
   },
+  booleanStates: {
+    productCardHoverState: false,
+    isMobileFilterVisible: false,
+    isPaymentSuccessModalOpen: false,
+  },
+  formStates: {
+    name: '',
+    phoneNumber: '',
+    billingAddress: '',
+    shippingAddress: '',
+    cardNumber: '',
+    cardExpiryDate: '',
+    cvv: '',
+  },
+  paymentErrorStates: {
+    cardNumber: '',
+    cardExpiryDate: '',
+    cvv: '',
+  }
 };
 
 const reducer = (state, action) => {
@@ -40,6 +59,8 @@ const reducer = (state, action) => {
       return moveToCart(state, payload);
     case TYPES.CLEAR_CART:
       return clearCart(state)
+    case TYPES.SET_MOBILE_FILTER_VISIBLITY:
+      return setMobileFilterVisiblity(state)
     default:
       return state;
   }
@@ -225,5 +246,15 @@ const moveToCart = (state, { product }) => {
 const clearCart = (state) => {
   return { ...state, cart: [] }
 }
+
+// Boolean state related functions
+
+const setMobileFilterVisiblity = (state) => {
+  const { booleanStates } = state
+  return { ...state, booleanStates: { ...booleanStates, isMobileFilterVisible: !booleanStates.isMobileFilterVisible } }
+}
+
+// Form state and error message related functions
+
 
 export default reducer;
