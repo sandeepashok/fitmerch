@@ -16,6 +16,11 @@ const PageHeading = styled.h2`
 const CartPageContainer = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: 1240px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 `
 const BtnContainer = styled.div`
   display: flex; 
@@ -44,6 +49,9 @@ const SummarySection = styled.div`
   display: flex;
   flex-direction: column;
   width: 30%;
+  @media (max-width: 1240px) {
+    width: 100%;
+  }
 `
 
 const CartPage = () => {
@@ -52,7 +60,7 @@ const CartPage = () => {
 
   return (
     <>
-      <PageHeading>Your Cart</PageHeading>
+      {cart.length !== 0 && <PageHeading>Your Cart</PageHeading>}
       {cart.length !== 0
         ? <CartPageContainer>
           <CartCard />

@@ -24,6 +24,11 @@ const Card = styled.div`
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       transition: all 0.3s ease;
     }
+    @media (max-width: 830px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   `
 const ProductImageContainer = styled.div`
     padding: 8px;
@@ -42,6 +47,9 @@ const ProductdetailContainer = styled.div`
     flex-direction: column;
     padding: 8px;
     width: 350px;
+    @media (max-width: 830px) {
+      width: 280px;
+    }
 `
 
 const ProductBrand = styled.div`
@@ -49,6 +57,9 @@ const ProductBrand = styled.div`
     font-size: 12px;
     font-weight: bold;
     padding: 10px 20px;
+    @media (max-width: 830px) {
+      text-align: center;
+    }
 `
 
 const ProductTitle = styled.div`
@@ -56,6 +67,9 @@ const ProductTitle = styled.div`
     font-weight: bold;
     font-size: 20px;
     padding: 10px 20px 0px 20px;
+    @media (max-width: 830px) {
+      text-align: center;
+    }
 `
 
 const ProductDescription = styled.div`
@@ -63,6 +77,17 @@ const ProductDescription = styled.div`
     font-size: 16px;
     font-weight: bold;
     padding: 10px 20px 2.5px 20px;
+    @media (max-width: 830px) {
+      text-align: center;
+    }
+`
+
+const ReviewCountSection = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    @media (max-width: 830px) {
+      justify-content: center;
+    }
 `
 
 const ProductRreviewContainer = styled.div`
@@ -86,6 +111,14 @@ const ReviewStar = styled(FaStar)`
     padding: 5px 5px 5px 1.5px;
 `
 
+const ProductDiscountSection = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    @media (max-width: 830px) {
+      justify-content: center;
+    }
+`
+
 const ProductDiscount = styled.div`
     background-color: #823FBD;
     color: white;
@@ -101,12 +134,18 @@ const ProductDiscount = styled.div`
 const ProductPrice = styled.div`
     font-weight: bold;
     margin: 5px 20px 0px 20px;
+    @media (max-width: 830px) {
+      text-align: center;
+    }
 `
 
 const ProductMrp = styled.div`
     font-size: 12px;
     display: flex;
     margin: 0px 20px 5px 20px;
+    @media (max-width: 830px) {
+      justify-content: center;
+    }
 `
 
 const Span = styled.div`
@@ -245,12 +284,17 @@ const CartCard = () => {
                 <ProductDescription>{description}</ProductDescription>
                 <ProductBrand>By {brand}</ProductBrand>
 
-                <ProductRreviewContainer>
-                  <ProductRating>{rating}</ProductRating>
-                  <ReviewStar />
-                </ProductRreviewContainer>
+                <ReviewCountSection>
+                  <ProductRreviewContainer>
+                    <ProductRating>{rating}</ProductRating>
+                    <ReviewStar />
+                  </ProductRreviewContainer>
+                </ReviewCountSection >
 
-                <ProductDiscount>{discount}% off</ProductDiscount>
+                <ProductDiscountSection>
+                  <ProductDiscount>{discount}% off</ProductDiscount>
+                </ProductDiscountSection>
+
                 <ProductPrice>₹{price * quantity}</ProductPrice>
                 <ProductMrp><Span>M.R.P: ₹</Span><Span strike={true}>{mrp * quantity}</Span></ProductMrp>
 
