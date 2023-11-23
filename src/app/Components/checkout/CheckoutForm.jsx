@@ -11,6 +11,9 @@ const FormContainer = styled.div`
   margin: 32px;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 950px) {
+    justify-content: center;
+  }
 `
 
 const Form = styled.form`
@@ -18,6 +21,9 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  @media (max-width: 950px) {
+    justify-content: center;
+  }
 `
 
 const Input = styled.input`
@@ -27,6 +33,9 @@ const Input = styled.input`
   box-sizing: border-box;
   background-color: #f2f2f2;
   border-radius: 5px;
+  @media (max-width: 768px) {
+    margin: 8px;
+  }
 `
 
 const ButtonContainer = styled.div`
@@ -77,6 +86,9 @@ const CalendarInput = styled(DatePicker)`
   box-sizing: border-box;
   background-color: #f2f2f2;
   border-radius: 5px;
+  @media (max-width: 768px) {
+    margin: 8px;
+  }
 `
 
 const AddressSection = styled.div`
@@ -85,6 +97,9 @@ const AddressSection = styled.div`
 const DisplayDataSection = styled.div`
   margin: 20px 0;
   width: 95%;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const DisplayData = styled.div`
@@ -136,6 +151,12 @@ const Modal = styled.div`
 const SuccessImg = styled.div`
   display: flex;
   justify-content: center;
+`
+const SectionHeading = styled.h2`
+  margin: 8px;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `
 
 const CheckoutForm = () => {
@@ -232,7 +253,7 @@ const CheckoutForm = () => {
       {/* Form */}
       <FormContainer>
         <Form onSubmit={handleSubmit}>
-          <h2>Add Address:</h2>
+          <SectionHeading>Add Address:</SectionHeading>
           {/* Name */}
           <Input
             type="text"
@@ -267,7 +288,7 @@ const CheckoutForm = () => {
 
           {/* Display Form Data */}
           <DisplayDataSection>
-            <h2>Entered Form Data:</h2>
+            <SectionHeading>Entered Form Data:</SectionHeading>
             <DisplayData>
               <DataItem>
                 <strong>Name:</strong> {formData.name}
@@ -281,7 +302,7 @@ const CheckoutForm = () => {
             </DisplayData>
           </DisplayDataSection>
 
-          <h2>Payment:</h2>
+          <SectionHeading>Payment:</SectionHeading>
           {/* Card Number */}
           <Input
             type="number"

@@ -14,6 +14,10 @@ const Summary = styled.div`
   height: 250px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
   border-radius: 5px;
+  @media (max-width: 320px) {
+    width: 100%;
+    margin: 16px;
+  }
 `
 
 const SummaryHeading = styled.h2`

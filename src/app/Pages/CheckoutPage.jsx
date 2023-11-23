@@ -11,11 +11,20 @@ const CheckoutSummaryContainer = styled.div`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
   border-radius: 10px;
   margin: 32px;
+  @media (max-width: 950px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const SummaryContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 950px) {
+    width: 100%;
+    justify-content: center;
+  }
 `
 
 const PlaceOrder = styled.h1`
