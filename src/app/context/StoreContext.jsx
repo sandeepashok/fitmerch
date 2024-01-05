@@ -7,7 +7,7 @@ export const StoreContext = createContext();
 
 const StoreContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const baseURL = `https://learningexpress.sandeepashok.repl.co`;
+  const baseURL = `https://6461b3a7-d682-4602-9bf9-5d6b02e23de6-00-1gthm57ynopid.hacker.replit.dev/products`;
   useEffect(() => {
     axios
       .get(`${baseURL}/products`)
