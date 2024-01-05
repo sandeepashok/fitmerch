@@ -7,7 +7,7 @@ export const StoreContext = createContext();
 
 const StoreContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const baseURL = `https://6461b3a7-d682-4602-9bf9-5d6b02e23de6-00-1gthm57ynopid.hacker.replit.dev/products`;
+  const baseURL = `https://6461b3a7-d682-4602-9bf9-5d6b02e23de6-00-1gthm57ynopid.hacker.replit.dev`;
   useEffect(() => {
     axios
       .get(`${baseURL}/products`)
