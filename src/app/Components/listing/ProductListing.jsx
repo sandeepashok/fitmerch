@@ -39,7 +39,7 @@ const PageHeading = styled.h2`
     font-size: 24px;
   }
 `
-const FilterButtonContainer = styled.button`
+const FilterButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: #FFFFFF;
