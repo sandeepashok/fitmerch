@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
 import { Card } from "./Card";
 import styled from "@emotion/styled";
-import { StoreContext } from "../../context/StoreContext";
 import EmptyPage from "../../Pages/EmptyPage";
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
-import { TYPES } from "../../context/types";
+import { TYPES } from "../../context/actionTypes";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useMemo } from "react";
 
 const ListingContainer = styled.div`
   display: flex;
@@ -78,7 +78,16 @@ const FilterText = styled.span`
 `
 
 const ProductListing = () => {
-  const { state: { products, booleanStates: { isMobileFilterVisible } }, dispatch } = useContext(StoreContext);
+
+  const memoisedSelector = useMemo(() => (state) => ({
+    products: state.products,
+    booleanStates: state.booleanStates
+  }), [])
+
+  const { products, booleanStates: { isMobileFilterVisible } } = useSelector(memoisedSelector, shallowEqual);
+
+  const dispatch = useDispatch();
+
   return (
     <ListingContainer isactive={isMobileFilterVisible}>
       {products.length !== 0

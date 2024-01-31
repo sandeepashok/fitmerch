@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
-import { useContext } from "react"
-import { StoreContext } from "../../context/StoreContext"
+import { useSelector } from "react-redux"
 
 const SummaryContainer = styled.div`
   width: 100%;
@@ -72,7 +71,7 @@ const Total = styled.div`
 
 const CartSummary = () => {
 
-  const { state: { cart } } = useContext(StoreContext);
+  const cart = useSelector(state => state.cart)
 
   const mrpArr = [0];
   const priceArr = [0];

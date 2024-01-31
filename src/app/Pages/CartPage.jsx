@@ -1,10 +1,9 @@
 import styled from "@emotion/styled"
 import CartCard from "../Components/cart/CartCard"
 import CartSummary from "../Components/cart/CartSummary"
-import { useContext } from "react"
-import { StoreContext } from "../context/StoreContext"
 import EmptyPage from "./EmptyPage"
 import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 const PageHeading = styled.h2`
   text-align: center;
@@ -56,7 +55,7 @@ const SummarySection = styled.div`
 
 const CartPage = () => {
 
-  const { state: { cart } } = useContext(StoreContext);
+  const cart = useSelector(state => state.cart)
 
   return (
     <>

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
-import { useContext, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { FaHeart, FaStar } from 'react-icons/fa'
-import { StoreContext } from '../../context/StoreContext'
-import { TYPES } from '../../context/types'
+import { TYPES } from '../../context/actionTypes'
 import { Link } from 'react-router-dom'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
 const CardContainer = styled.div`
   width: 300px;
@@ -162,7 +162,14 @@ export const Card = ({ product }) => {
   const { imageURL, title, price, discount, brand, rating, reviews, inStock, itemId } =
     product
 
-  const { state: { cart, wishlist }, dispatch } = useContext(StoreContext)
+  const memoisedSelector = useMemo(() => (state) => ({
+    cart: state.cart,
+    wishlist: state.wishlist
+  }), [])
+
+  const { cart, wishlist } = useSelector(memoisedSelector, shallowEqual)
+
+  const dispatch = useDispatch();
 
   const [cardHoverState, setCardHoverState] = useState(false)
 

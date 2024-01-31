@@ -1,10 +1,9 @@
-import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 import { NavLink, Link } from 'react-router-dom';
 import { FaShoppingCart, FaHeart } from 'react-icons/fa';
 import { IoShirtSharp } from 'react-icons/io5'
-import { TYPES } from '../../context/types';
-import { StoreContext } from '../../context/StoreContext';
+import { TYPES } from '../../context/actionTypes';
+import { useDispatch } from 'react-redux';
 
 const NavContainer = styled.div`
   display: flex;
@@ -74,7 +73,7 @@ const NavLinkText = styled.p`
 
 
 const Navbar = () => {
-  const { dispatch } = useContext(StoreContext);
+  const dispatch = useDispatch();
   return (
     <NavContainer>
       <BrandContainer to="/" onClick={() => dispatch({ type: TYPES.CLEAR_ALL })}>

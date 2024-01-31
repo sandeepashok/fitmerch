@@ -1,8 +1,7 @@
 import styled from '@emotion/styled'
-import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { StoreContext } from '../context/StoreContext'
-import { TYPES } from '../context/types'
+import { TYPES } from '../context/actionTypes'
+import { useDispatch } from 'react-redux'
 
 const HomeContainer = styled.div`
   z-index: 1;
@@ -93,7 +92,7 @@ const Subtitle = styled.h3`
 
 const HomePage = () => {
 
-  const { dispatch } = useContext(StoreContext);
+  const dispatch = useDispatch();
 
   return (
     <HomeContainer>

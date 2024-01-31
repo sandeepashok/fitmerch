@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { StoreContext } from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
-import { TYPES } from '../../context/types';
+import { TYPES } from '../../context/actionTypes';
+import { useDispatch, useSelector } from 'react-redux';
 
 const FormContainer = styled.div`
   width: 100%;
@@ -161,7 +161,8 @@ const SectionHeading = styled.h2`
 
 const CheckoutForm = () => {
 
-  const { state: { cart }, dispatch } = useContext(StoreContext);
+  const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
 
   const priceArr = [0];
   cart && cart.forEach(cartItem => {
@@ -177,7 +178,7 @@ const CheckoutForm = () => {
     billingAddress: '',
     shippingAddress: '',
     cardNumber: '',
-    cardExpiryDate: '',
+    cardExpiryDate: new Date(),
     cvv: '',
   });
 
@@ -241,7 +242,7 @@ const CheckoutForm = () => {
       <ModalContainer isactive={isModalOpen}>
         <Modal>
           <SuccessImg>
-            <svg width="85px" height="85px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect> <path d="M24 4L29.2533 7.83204L35.7557 7.81966L37.7533 14.0077L43.0211 17.8197L41 24L43.0211 30.1803L37.7533 33.9923L35.7557 40.1803L29.2533 40.168L24 44L18.7467 40.168L12.2443 40.1803L10.2467 33.9923L4.97887 30.1803L7 24L4.97887 17.8197L10.2467 14.0077L12.2443 7.81966L18.7467 7.83204L24 4Z" fill="#FF406D" stroke="#823FBD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M17 24L22 29L32 19" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <svg width="85px" height="85px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="48" height="48" fill="white" fillOpacity="0.01"></rect> <path d="M24 4L29.2533 7.83204L35.7557 7.81966L37.7533 14.0077L43.0211 17.8197L41 24L43.0211 30.1803L37.7533 33.9923L35.7557 40.1803L29.2533 40.168L24 44L18.7467 40.168L12.2443 40.1803L10.2467 33.9923L4.97887 30.1803L7 24L4.97887 17.8197L10.2467 14.0077L12.2443 7.81966L18.7467 7.83204L24 4Z" fill="#FF406D" stroke="#823FBD" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M17 24L22 29L32 19" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
           </SuccessImg>
           <p>Payment Successful!</p>
           <div>
