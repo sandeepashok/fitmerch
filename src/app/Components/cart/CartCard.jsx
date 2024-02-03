@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
 import styled from "@emotion/styled";
-import { StoreContext } from "../../context/StoreContext";
 import { FaStar, FaTrash } from "react-icons/fa";
-import { TYPES } from '../../context/types';
+import { TYPES } from '../../context/actionTypes';
+import { useDispatch, useSelector } from "react-redux";
 
 const CartContainer = styled.div`
     display: flex;
@@ -252,7 +251,8 @@ const TrashIcon = styled(FaTrash)``
 
 const CartCard = () => {
 
-  const { state: { cart }, dispatch } = useContext(StoreContext);
+  const cart = useSelector(state => state.cart)
+  const dispatch = useDispatch()
 
   const dec = (product) => {
     dispatch({

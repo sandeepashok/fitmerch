@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { useContext } from "react";
-import { StoreContext } from "../../context/StoreContext";
 import { v4 as uniqueId } from "uuid";
-import { TYPES } from "../../context/types";
+import { TYPES } from "../../context/actionTypes";
 import { TbAdjustmentsOff } from "react-icons/tb";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useMemo } from "react";
 
 const FilterContainer = styled.div`
   height: 100%;
@@ -136,7 +136,17 @@ const Hr = styled.hr`
 `
 
 const Filtering = () => {
-  const { state: { filters: { sortByPrice, department, categories, brands, ratings, includeOutOfStock }, productListCopy, booleanStates: { isMobileFilterVisible } }, dispatch } = useContext(StoreContext);
+
+  const memoisedSelector = useMemo(() => (state) => ({
+    filters: state.filters,
+    productListCopy: state.productListCopy,
+    booleanStates: state.booleanStates
+  }), [])
+
+  const { filters: { sortByPrice, department, categories, brands, ratings, includeOutOfStock }, productListCopy, booleanStates: { isMobileFilterVisible } } = useSelector(memoisedSelector, shallowEqual);
+
+  const dispatch = useDispatch()
+
   const availableCategories = [];
   const availableBrands = [];
   const customerRatings = [

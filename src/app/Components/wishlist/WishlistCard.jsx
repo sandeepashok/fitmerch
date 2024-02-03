@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
 import styled from "@emotion/styled";
-import { StoreContext } from "../../context/StoreContext";
 import { FaStar, FaTrash, FaCartArrowDown } from "react-icons/fa";
-import { TYPES } from '../../context/types';
+import { TYPES } from '../../context/actionTypes';
 import { Link } from 'react-router-dom';
 import EmptyPage from '../../Pages/EmptyPage';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useMemo } from "react";
 
 const PageHeading = styled.h2`
     text-align: center;
@@ -236,14 +236,18 @@ const RemoveFromCart = styled.button`
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
   `
+const TrashIcon = styled(FaTrash)``
+
+const CartIcon = styled(FaCartArrowDown)``
 
 const WishlistCard = () => {
 
-  const TrashIcon = styled(FaTrash)``
-
-  const CartIcon = styled(FaCartArrowDown)``
-
-  const { state: { wishlist, cart }, dispatch } = useContext(StoreContext);
+  const memoisedSelector = useMemo(() => (state) => ({
+    wishlist: state.wishlist,
+    cart: state.cart
+  }), [])
+  const { wishlist, cart } = useSelector(memoisedSelector, shallowEqual);
+  const dispatch = useDispatch()
 
   return (
     <>
