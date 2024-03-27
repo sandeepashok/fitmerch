@@ -4,12 +4,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://fitmerch.netlify.app/">
+    <a href="https://fitmerch.netlify.app/" target="_blank">
      >> Demo <<
     </a>   
   </h3>
 </div>
-
 
 <!-- OVERVIEW -->
 
@@ -19,16 +18,17 @@
 
 ### About
 
- This is an ecommerce site  called "FitMerch". It based on clothing where you can find various brands of fitness merchandise.
+This is an ecommerce site called "FitMerch". It based on clothing where you can find various brands of fitness merchandise.
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - REACT
-- Express (REST API) 
+- Redux
+- Emotion Styled Components
 - Netlify
-
+- Render
 
 ## Contact
 
